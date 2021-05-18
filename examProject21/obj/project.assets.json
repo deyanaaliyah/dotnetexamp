@@ -8177,11 +8177,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\finalexamProject21\\examProject21\\examProject21\\examProject21.csproj",
+      "projectUniqueName": "C:\\Users\\Bruger\\Documents\\GitHub\\dotnetexamp\\examProject21\\examProject21.csproj",
       "projectName": "examProject21",
-      "projectPath": "C:\\Users\\Bruger\\Desktop\\finalexamProject21\\examProject21\\examProject21\\examProject21.csproj",
+      "projectPath": "C:\\Users\\Bruger\\Documents\\GitHub\\dotnetexamp\\examProject21\\examProject21.csproj",
       "packagesPath": "C:\\Users\\Bruger\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bruger\\Desktop\\finalexamProject21\\examProject21\\examProject21\\obj\\",
+      "outputPath": "C:\\Users\\Bruger\\Documents\\GitHub\\dotnetexamp\\examProject21\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bruger\\AppData\\Roaming\\NuGet\\NuGet.Config",
