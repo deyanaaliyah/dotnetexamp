@@ -6,12 +6,28 @@
 *@
 @{
 }
-@using(Html.BeginForm())
-{
-    <p>UserName:@Html.TextBoxFor(x => x.UserName)</p>
-    <p>Password:@Html.TextBoxFor(x => x.Password)</p>
+<!DOCTYPE html>
 
-    <button type="submit">log in</button>
+<html>
+    <head>
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-grid.min.css"/>
+        <link rel="stylesheet" href="~/css/site.css"/>
+    </head>
+    <body>
+        <header>
 
-}
+        </header>
+        <main>
+            @using (Html.BeginForm())
+            {
 
+                <p>UserName @Html.TextBoxFor(x => x.UserName)</p>
+                <p>Password @Html.TextBoxFor(x => x.Password)</p>
+
+                <button type="submit">log in</button>
+                @Html.ValidationSummary()/*Displays the errors if input field is empty*/
+            }
+
+        </main>
+    </body>
+</html>

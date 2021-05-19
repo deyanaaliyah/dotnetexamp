@@ -44,30 +44,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.energy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.unit)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.water)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mUnit)
-            </td>
-        </tr>
-}
+        @try
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.energy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.unit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.water)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mUnit)
+                    </td>
+                </tr>
+            }
+        }
+            catch (Exception e) 
+            { 
+               <tr>Error occured: @e</tr> 
+            }
+
     </tbody>
 </table>

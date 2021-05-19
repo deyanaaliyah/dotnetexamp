@@ -21,39 +21,44 @@ namespace examProject21.Controllers
 
         }
 
+
+        [HttpGet]
         public IActionResult Index()
         {
             var results = _cc.Sheet1.ToList();
 
-            return View(results);
-        
+            return View(results); 
         }
+
+        [HttpPost]
+        public ActionResult Index(String Empsearch)
+        {
+            ViewData["Getdetails"] = Empsearch;
+            var empquery = from x in _cc.Sheet1 select x;
+            if (!string.IsNullOrEmpty(Empsearch))
+            {
+                empquery = empquery.Where(x => x.address.Contains(Empsearch));
+            }
+            return View(empquery.AsNoTracking().ToListAsync());
+        }
+
         [HttpGet]
         public ActionResult loginForm()
         {
-            return View();
+            return View(); // By default, it returns a View with same name as action name
         } 
-        [HttpPost]
-        public ActionResult loginForm(Login login, string Empsearch)
-        {
 
+        [HttpPost]
+        public ActionResult loginForm(Login login)
+        {
             if (login.UserName == UserName && login.Password == Password)
             {
-                ViewData["Getdetails"] = Empsearch;
-                var empquery = from x in _cc.Sheet1 select x;
-                if (!string.IsNullOrEmpty(Empsearch))
-                {
-                    empquery = empquery.Where(x => x.address.Contains(Empsearch));
-                }
-                //return View (empquery.AsNoTracking().ToListAsync());
-                return View("Index",login);
+                return View("Index");
             }
                 else
                 {
-                    return View();
+                    return View(); //By default, it returns a View with same name as action name
                 }
-
-            
         }
     }
 }
