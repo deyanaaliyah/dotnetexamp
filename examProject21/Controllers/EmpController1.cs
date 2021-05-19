@@ -47,12 +47,11 @@ namespace examProject21.Controllers
                 }
                 //return View (empquery.AsNoTracking().ToListAsync());
                 return View("Index",login);
-
             }
-            else
-            {
-                return View();
-            }
+                else
+                {
+                    return View();
+                }
 
             
         }
