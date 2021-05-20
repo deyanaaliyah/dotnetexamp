@@ -28,6 +28,7 @@ namespace examProject21.Controllers
             return View(results); 
         }
 
+        
         [HttpGet]
         public async Task <IActionResult> Index(String Empsearch)
         {
@@ -39,7 +40,7 @@ namespace examProject21.Controllers
             }
             return View( await empquery.AsNoTracking().ToListAsync());
         }
-
+        
         [HttpGet]
         public ActionResult loginForm()
         {

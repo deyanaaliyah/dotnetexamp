@@ -20,7 +20,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.address)
+                @Html.DisplayNameFor(model => model.address) 
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.id)
@@ -44,13 +44,13 @@
         </tr>
     </thead>
     <tbody>
-        @try
+        @if(Model != null)
         {
             @foreach (var item in Model)
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.address)
+                        @Html.DisplayFor(modelItem => item.address) 
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.id)
@@ -73,10 +73,11 @@
                 </tr>
             }
         }
-            catch (Exception e) 
+           else 
             { 
-               <tr>Error occured: @e</tr> 
+               <td>Error occured</td> 
             }
 
     </tbody>
 </table>
+
