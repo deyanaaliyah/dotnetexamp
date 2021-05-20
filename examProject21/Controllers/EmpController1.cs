@@ -9,17 +9,13 @@ namespace examProject21.Controllers
 {
     public class EmpController1 : Controller
     {
-        public String UserName = "admin";
-        public String Password = "admin";
-
+       
         private readonly ConnectionStringClass _cc;
         public EmpController1(ConnectionStringClass cc)
         {
             _cc = cc;
 
         }
-
-
        
         public IActionResult Index()
         {
@@ -27,8 +23,7 @@ namespace examProject21.Controllers
 
             return View(results); 
         }
-
-        
+        //search 
         [HttpGet]
         public async Task <IActionResult> Index(String Empsearch)
         {
@@ -40,7 +35,8 @@ namespace examProject21.Controllers
             }
             return View( await empquery.AsNoTracking().ToListAsync());
         }
-        
+
+        //Returns a login form
         [HttpGet]
         public ActionResult loginForm()
         {
