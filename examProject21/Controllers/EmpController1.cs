@@ -22,7 +22,7 @@ namespace examProject21.Controllers
         }
 
 
-        [HttpGet]
+       
         public IActionResult Index()
         {
             var results = _cc.Sheet1.ToList();
@@ -30,8 +30,8 @@ namespace examProject21.Controllers
             return View(results); 
         }
 
-        [HttpPost]
-        public ActionResult Index(String Empsearch)
+        [HttpGet]
+        public async Task <IActionResult> Index(String Empsearch)
         {
             ViewData["Getdetails"] = Empsearch;
             var empquery = from x in _cc.Sheet1 select x;
@@ -39,7 +39,7 @@ namespace examProject21.Controllers
             {
                 empquery = empquery.Where(x => x.address.Contains(Empsearch));
             }
-            return View(empquery.AsNoTracking().ToListAsync());
+            return View( await empquery.AsNoTracking().ToListAsync());
         }
 
         [HttpGet]
