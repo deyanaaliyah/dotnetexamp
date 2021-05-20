@@ -689,4 +689,3 @@ C:\Users\acer\Desktop\git pull\examProject21\obj\Debug\netcoreapp3.1\examProject
 C:\Users\acer\Desktop\git pull\examProject21\obj\Debug\netcoreapp3.1\examProject21.dll
 C:\Users\acer\Desktop\git pull\examProject21\obj\Debug\netcoreapp3.1\examProject21.pdb
 C:\Users\acer\Desktop\git pull\examProject21\obj\Debug\netcoreapp3.1\examProject21.genruntimeconfig.cache
-C:\Users\hm\Desktop\csharp\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\EmpController1\loginForm1.cshtml.g.cs

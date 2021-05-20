@@ -47,17 +47,5 @@ namespace examProject21.Controllers
             return View(); // By default, it returns a View with same name as action name
         } 
 
-        [HttpPost]
-        public ActionResult loginForm(Login login)
-        {
-            if (login.UserName == UserName && login.Password == Password)
-            {
-                return View("Index");
-            }
-                else
-                {
-                    return View(); //By default, it returns a View with same name as action name
-                }
-        }
     }
 }
