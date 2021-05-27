@@ -13,36 +13,34 @@
     <script src="js/login.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container loginformular">
         <div class="main">
             <form id="form_id" method="post" name="myform">
                 <label>User Name :</label>
                 <input type="text" name="username" id="username" />
                 <label>Password :</label>
                 <input type="password" name="password" id="password" />
-                <input type="button" value="Login" id="submit" onclick="validate()" />
+                <button type="button" value="Login" id="submit" onclick="validate()">log in</button>
             </form>
+
         </div>
     </div>
     <script>
         var attempt = 3; // Variable to count number of attempts.
         // Below function Executes on click of login button.
-        function validate()
-        {
+        function validate() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
-            if (username == "admin" && password == "admin")
-            {
+            if (username == "admin" && password == "admin") {
                 alert("Login successfully");
-                window.location = "https://localhost:44324/Home/Index"; // Redirecting to other page.
+                window.location = "https://localhost:44324/"; // Redirecting to other page.
                 return false;
             }
             else {
                 attempt--;// Decrementing by one.
                 alert("You have left " + attempt + " attempt;");
                 // Disabling fields after 3 attempts.
-                if (attempt == 0)
-                {
+                if (attempt == 0) {
                     document.getElementById("username").disabled = true;
                     document.getElementById("password").disabled = true;
                     document.getElementById("submit").disabled = true;
@@ -51,6 +49,44 @@
             }
         }
     </script>
+
+    <style>
+        .loginformular {
+            background-color: #0c0c0c;
+            color: #C3C3C3;
+            margin: 3% auto;
+            display: grid;
+            grid-gap: 30px;
+            padding: 2rem 3rem;
+            width: 40%;
+            border-radius: 4px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */;
+        }
+
+        #submit {
+            background-color: #26be6c;
+            width: 40%;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 4% auto 0 auto;
+            display: block;
+        }
+    </style>
 </body>
 </html>
 

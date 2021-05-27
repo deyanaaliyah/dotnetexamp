@@ -3,24 +3,25 @@
 @{
     ViewData["Title"] = "Index";
 }
- <br/>
+<br />
 <h1>Daily Consumption Readings</h1>
-<hr/>
-<br/>
+<hr />
+<br />
 
 <form method="get" asp-action="Index">
     <p>
-        <input type="search" placeholder="Enter your address...." value="@ViewData["Getdetails"]" name="Empsearch" style="width:500px;"/>
-        <input type="submit" value="Search" class="btn btn-primary"/> |
+        <input type="search" placeholder="Enter your address...." value="@ViewData["Getdetails"]" name="Empsearch" style="width:500px;" />
+        <input type="submit" value="Search" class="btn btn-primary" /> |
         <a asp-action="Index">Get all Records</a>
     </p>
-    <br/>
+    <br />
 </form>
-<table class="table">
+
+<table class="table overviewTable">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.address) 
+                @Html.DisplayNameFor(model => model.address)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.id)
@@ -40,17 +41,17 @@
             <th>
                 @Html.DisplayNameFor(model => model.mUnit)
             </th>
-            <th></th>
+
         </tr>
     </thead>
     <tbody>
-        @if(Model != null)
+        @if (Model != null)
         {
             @foreach (var item in Model)
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.address) 
+                        @Html.DisplayFor(modelItem => item.address)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.id)
@@ -73,11 +74,48 @@
                 </tr>
             }
         }
-           else 
-            { 
-               <td>Error occured</td> 
+        else
+        {
+        <td>Error occured</td>
+
+    }
+
+        </tbody>
+    </table>
+
+    /*--- table start---*/
+
+    <style>
+        .overviewTable {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 85%;
+            margin: 3% auto;
+            border: 4px solid black;
+        }
+
+            .overviewTable tr:nth-child(even) {
+                background-color: #f2f2f2;
             }
 
-    </tbody>
-</table>
+            .overviewTable tr:hover {
+                background-color: #ddd;
+            }
 
+            .overviewTable tr {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: white;
+                color: black;
+            }
+
+                .overviewTable tr.overviewTable th {
+                    border: 1px solid #ddd;
+                    padding: 10px;
+                }
+
+            .overviewTable th {
+                padding: 1%;
+            }
+    </style>
