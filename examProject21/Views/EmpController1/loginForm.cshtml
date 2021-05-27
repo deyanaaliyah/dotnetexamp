@@ -1,12 +1,12 @@
 ﻿
 @{
     ViewData["Title"] = "View";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null ;
 }
 
 <html>
 <head>
-    <title>Javascript Login Form Validation</title>
+    <title>Login</title>
     <!-- Include CSS File Here -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- Include JS File Here -->
@@ -34,7 +34,7 @@
             if (username == "admin" && password == "admin")
             {
                 alert("Login successfully");
-                window.location = "https://localhost:44324/"; // Redirecting to other page.
+                window.location = "https://localhost:44324/Home/Index"; // Redirecting to other page.
                 return false;
             }
             else {

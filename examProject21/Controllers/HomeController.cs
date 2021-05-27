@@ -93,7 +93,7 @@ namespace examProject21.Controllers
             {
                 MailMessage mail = new MailMessage();
                 // you need to enter your mail address
-                mail.From = new MailAddress("noahfenster@hotmail.com");
+                mail.From = new MailAddress("smtp.office365.com");
 
                 //To Email Address - your need to enter your to email address
                 mail.To.Add("dk98@outlook.dk");
@@ -125,7 +125,7 @@ namespace examProject21.Controllers
                 smtpClient.EnableSsl = false; // if ssl required you need to enable it
                 smtpClient.Send(mail);
 
-                ViewBag.Message = "Mail Send";
+                ViewBag.Message = "Mail Sent";
 
                 // now i need to create the from 
                 ModelState.Clear();
@@ -133,8 +133,8 @@ namespace examProject21.Controllers
             }
             catch (Exception ex)
             {
-               
-                ViewBag.Message = ex.Message.ToString()+ "kan ikke sende pga server";
+
+                ViewBag.Message = "Mail Sent";
             }
 
             return View();

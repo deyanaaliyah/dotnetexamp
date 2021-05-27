@@ -3,7 +3,7 @@
     ViewData["Title"] = "ContactUs";
 }
 
-<h1>@ViewBag.Message</h1>
+
 <h1>Book An Appointment With An Energy Advisor</h1>
 <hr/>
 <br/>
@@ -24,7 +24,7 @@
         <span class="text-danger" asp-validation-for="@Model.Message"></span>
     </div>
     <button type="submit" class="btn btn-primary">Send Mail</button>
-
+    <h1>@ViewBag.Message</h1>
 </form>
 
 
