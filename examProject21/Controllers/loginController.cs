@@ -7,30 +7,29 @@ using System.Threading.Tasks;
 
 namespace examProject21.Controllers
 {
-    public class loginController : Controller
+    public class LoginController : Controller
     {
         public String UserName = "admin";
         public String Password = "admin";
 
         [HttpGet]
-        public ActionResult loginForm()
+        public ActionResult LoginForm()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult loginForm(Login login)
+        public ActionResult LoginForm(Login login)
         {
             if(login.UserName == UserName && login.Password == Password)
             {
-            return View("Test",login);
-
+                return View("Test",login);
             }
-            else{
-            return View();
-        }
-       }   
-    
-}
+            else
+            {
+                return View();
+            }
+        }   
+    }
 }
 
 

@@ -16,9 +16,9 @@
     <div class="container loginformular">
         <div class="main">
             <form id="form_id" method="post" name="myform">
-                <label>User Name :</label>
+                <label>Brugernavn</label>
                 <input type="text" name="username" id="username" />
-                <label>Password :</label>
+                <label>Adgangskode</label>
                 <input type="password" name="password" id="password" />
                 <button type="button" value="Login" id="submit" onclick="validate()">log in</button>
             </form>
@@ -33,7 +33,7 @@
             var password = document.getElementById("password").value;
             if (username == "admin" && password == "admin") {
                 alert("Login successfully");
-                window.location = "https://localhost:44324/"; // Redirecting to other page.
+                window.location = "https://localhost:44324/Home/Index"; // Redirecting to other page.
                 return false;
             }
             else {
@@ -58,7 +58,7 @@
             display: grid;
             grid-gap: 30px;
             padding: 2rem 3rem;
-            width: 40%;
+            width: 30%;
             border-radius: 4px;
         }
 

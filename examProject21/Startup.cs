@@ -52,8 +52,8 @@ namespace examProject21
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=EmpController1}/{action=loginForm}/{id?}");
+                    name: "Login/",
+                    pattern: "{controller=Login}/{action=LoginForm}/{id?}");
             });
         }
     }
