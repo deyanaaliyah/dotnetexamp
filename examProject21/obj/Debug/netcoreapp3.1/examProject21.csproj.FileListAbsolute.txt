@@ -672,9 +672,6 @@ C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3
 C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\examProject21.TagHelpers.input.cache
 C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\examProject21.TagHelpers.output.cache
 C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\examProject21.RazorCoreGenerate.cache
-C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\EmpController1\Index.cshtml.g.cs
-C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\EmpController1\loginForm.cshtml.g.cs
-C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Home\ContactUs.cshtml.g.cs
 C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -820,3 +817,8 @@ C:\Users\acer\Desktop\git clone again\dotnetexamp\examProject21\obj\Debug\netcor
 C:\Users\acer\Desktop\git clone again\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\examProject21.dll
 C:\Users\acer\Desktop\git clone again\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\examProject21.pdb
 C:\Users\acer\Desktop\git clone again\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\examProject21.genruntimeconfig.cache
+C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\examProject21.csprojAssemblyReference.cache
+C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Email\ContactUs.cshtml.g.cs
+C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Email\Iframe.cshtml.g.cs
+C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Login\LoginForm.cshtml.g.cs
