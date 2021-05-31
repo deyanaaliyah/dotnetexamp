@@ -28,7 +28,10 @@
         <textarea class="form-control" asp-for="@Model.Message" placeholder="Din besked"></textarea>
         <span class="text-danger" asp-validation-for="@Model.Message"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Send mail</button>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Send mail</button>
+    </div>
+    
     <style>@ViewBag.HideForm</style>
     <h1>@ViewBag.SuccessfullySent</h1>
     <h3>@ViewBag.Message</h3>
