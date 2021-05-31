@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace examProject21.Models
 {
-    public class ExamClass
+    public class EnergyConsumption
     {
         [Key]
         public double id { get; set; }

@@ -13,7 +13,7 @@ namespace examProject21.Models
 
         }
 
-        public DbSet<ExamClass> Sheet1 { get; set; }
+        public DbSet<EnergyConsumption> Sheet1 { get; set; }
 
     }
 }

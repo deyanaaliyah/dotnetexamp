@@ -4,14 +4,8 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Diagnostics;
-using System.Net;
-using System.Net.Mail;
+using MimeKit;
+using MailKit.Net.Smtp;
 
 namespace examProject21.Controllers
 {
@@ -42,100 +36,51 @@ namespace examProject21.Controllers
         [HttpGet]
         public IActionResult ContactUs()
         {
+
             return View();
         }
 
         [HttpPost]
         public IActionResult ContactUs(SendMailDto sendMailDto)
         {
-            if (!ModelState.IsValid) return View();
+            // Creating a variable using the MimeKit library
+            var message = new MimeMessage();
 
-            /* try
-              {
-                  MailMessage mail = new MailMessage();
+            // Sending the mail from our default/fake mail
+            message.From.Add(new MailboxAddress("Raadgivning", "noahfensterleigh@gmail.com"));
 
-                  mail.From = new MailAddress("noahfenster@hotmail.com");
+            // CC everyone in the group + the sender
+            message.To.Add(new MailboxAddress("Mail sendt til", sendMailDto.Email));
+            message.To.Add(new MailboxAddress("Mail sendt til", "deja0191@stud.kea.dk"));
+            message.To.Add(new MailboxAddress("Mail sendt til", "moha6248@stud.kea.dk"));
+            message.To.Add(new MailboxAddress("Mail sendt til", "heri0106@stud.kea.dk"));
+            message.To.Add(new MailboxAddress("Mail sendt til", "yasm2460@stud.kea.dk"));
 
-                  mail.To.Add("yasm2460@stud.kea.dk");
+            // Instantiate the subject - should be kept default to filter the mailbox nicely!
+            message.Subject = "Ny booking fra websiden!";
 
-                  mail.CC.Add("moha6248@stud.kea.dk");
-
-                  mail.CC.Add("heri0106@stud.kea.dk");
-
-                  mail.To.Add("deja0191@stud.kea.dk");
-
-                  mail.Subject = sendMailDto.Subject;
-
-                  mail.IsBodyHtml = true;
-
-                  string content = "Name : " + sendMailDto.Name;
-                  content += "<br/> Message : " + sendMailDto.Message;
-
-                  mail.Body = content;
-
-                  SmtpClient smtpClient = new SmtpClient("mail.hotmail.dk");
-
-                  NetworkCredential networkCredential = new NetworkCredential("noahfenster@hotmail.com", "@iPhone4");
-                  smtpClient.UseDefaultCredentials = false;
-                  smtpClient.Credentials = networkCredential;
-                  smtpClient.Port = 25;
-                  smtpClient.EnableSsl = false;
-                  smtpClient.Send(mail);
-
-                  ViewBag.Message = "Mail Send";
-
-                  ModelState.Clear();
-
-
-
-              }*/
-            try
+            // Inserting the body inside the mail using the TextPart class
+            message.Body = new TextPart("plain")
             {
-                MailMessage mail = new MailMessage();
-                // you need to enter your mail address
-                mail.From = new MailAddress("smtp.office365.com");
+                Text = "Navn: " + sendMailDto.Name +
+                    "\nEmail: " + sendMailDto.Email +
+                    "\nAdresse: " + sendMailDto.Address +
+                    "\n\nBesked: " + sendMailDto.Message
+            };
 
-                //To Email Address - your need to enter your to email address
-                mail.To.Add("dk98@outlook.dk");
-
-                mail.Subject = sendMailDto.Subject;
-
-                //you can specify also CC and BCC - i will skip this
-                //mail.CC.Add("");
-                //mail.Bcc.Add("");
-
-                mail.IsBodyHtml = true;
-
-                string content = "Name : " + sendMailDto.Name;
-                content += "<br/> Message : " + sendMailDto.Message + "<br/> subject : " + sendMailDto.Subject;
-
-                mail.Body = content;
-
-
-                //create SMTP instant
-
-                //you need to pass mail server address and you can also specify the port number if you required
-                SmtpClient smtpClient = new SmtpClient("mail.hotmail.com");
-
-                //Create nerwork credential and you need to give from email address and password
-                NetworkCredential networkCredential = new NetworkCredential("noahfenster@hotmail.com", "@iPhone4");
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = networkCredential;
-                smtpClient.Port = 25; // this is default port number - you can also change this
-                smtpClient.EnableSsl = false; // if ssl required you need to enable it
-                smtpClient.Send(mail);
-
-                ViewBag.Message = "Mail Sent";
-
-                // now i need to create the from 
-                ModelState.Clear();
-
-            }
-            catch (Exception ex)
+            // Creating the mail server called client - very important to keep these private since it's very confidential
+            using (var client = new SmtpClient())
             {
+                // Mail server fields. Port number, SSL, etc.
+                client.Connect("smtp.gmail.com", 587, false);
+                client.Authenticate("noahfensterleigh@gmail.com", "@iPhone4");
+                client.Send(message);
+                client.Disconnect(true);
+            };
 
-                ViewBag.Message = "Mail Sent";
-            }
+            ViewBag.HideForm = ".form-group, button{ display: none;}";
+            ViewBag.SuccessfullySent = "Tak! Du har nu provet at sende os en mail";
+            ViewBag.Message = "Hvis ikke du selv modtager en bekraeftelse, bedes du prove igen \n1-3 hverdages ventetid";
 
             return View();
         }

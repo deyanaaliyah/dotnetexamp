@@ -12,8 +12,10 @@ namespace examProject21.Models
         [Required]
         public string Name { get; set; }
         [Required]
-        public string Subject { get; set; }
-        [Required]
         public string Message { get; set; }
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Address { get; set; }
     }
 }
