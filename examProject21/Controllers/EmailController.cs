@@ -52,9 +52,9 @@ namespace examProject21.Controllers
             // CC everyone in the group + the sender
             message.To.Add(new MailboxAddress("Mail sendt til", sendMailDto.Email));
             message.To.Add(new MailboxAddress("Mail sendt til", "deja0191@stud.kea.dk"));
-            //message.To.Add(new MailboxAddress("Mail sendt til", "moha6248@stud.kea.dk"));
-            //message.To.Add(new MailboxAddress("Mail sendt til", "heri0106@stud.kea.dk"));
-            //message.To.Add(new MailboxAddress("Mail sendt til", "yasm2460@stud.kea.dk"));
+            message.To.Add(new MailboxAddress("Mail sendt til", "moha6248@stud.kea.dk"));
+            message.To.Add(new MailboxAddress("Mail sendt til", "heri0106@stud.kea.dk"));
+            message.To.Add(new MailboxAddress("Mail sendt til", "yasm2460@stud.kea.dk"));
 
             // Instantiate the subject - should be kept default to filter the mailbox nicely!
             message.Subject = "Ny booking fra websiden!";
@@ -78,7 +78,7 @@ namespace examProject21.Controllers
                 client.Disconnect(true);
             };
 
-            ViewBag.HideForm = ".form-group, button{ display: none;}";
+            ViewBag.HideForm = ".form-group { display: none;}";
             ViewBag.SuccessfullySent = "Tak! Du har nu provet at sende os en mail";
             ViewBag.Message = "Hvis ikke du selv modtager en bekraeftelse, bedes du prove igen \n1-3 hverdages ventetid";
 
