@@ -50,11 +50,11 @@ namespace examProject21.Controllers
             message.From.Add(new MailboxAddress("Rådgivning", "noahfensterleigh@gmail.com"));
 
             // CC everyone in the group + the sender
-            message.To.Add(new MailboxAddress("Mail sendt til", sendMailDto.Email));
-            message.To.Add(new MailboxAddress("Mail sendt til", "deja0191@stud.kea.dk"));
-            message.To.Add(new MailboxAddress("Mail sendt til", "moha6248@stud.kea.dk"));
-            message.To.Add(new MailboxAddress("Mail sendt til", "heri0106@stud.kea.dk"));
-            message.To.Add(new MailboxAddress("Mail sendt til", "yasm2460@stud.kea.dk"));
+            message.To.Add(new MailboxAddress("sendMailDto.Name", sendMailDto.Email));
+            message.To.Add(new MailboxAddress("Dejan", "deja0191@stud.kea.dk"));
+            message.To.Add(new MailboxAddress("Mohamad", "moha6248@stud.kea.dk"));
+            message.To.Add(new MailboxAddress("Heritier", "heri0106@stud.kea.dk"));
+            message.To.Add(new MailboxAddress("Yasmin", "yasm2460@stud.kea.dk"));
 
             // Instantiate the subject - should be kept default to filter the mailbox nicely!
             message.Subject = "Ny booking fra websiden!";
