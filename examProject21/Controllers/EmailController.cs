@@ -47,7 +47,7 @@ namespace examProject21.Controllers
             var message = new MimeMessage();
 
             // Sending the mail from our default/fake mail
-            message.From.Add(new MailboxAddress("Raadgivning", "noahfensterleigh@gmail.com"));
+            message.From.Add(new MailboxAddress("Rådgivning", "noahfensterleigh@gmail.com"));
 
             // CC everyone in the group + the sender
             message.To.Add(new MailboxAddress("Mail sendt til", sendMailDto.Email));
@@ -79,8 +79,8 @@ namespace examProject21.Controllers
             };
 
             ViewBag.HideForm = ".form-group { display: none;}";
-            ViewBag.SuccessfullySent = "Tak! Du har nu provet at sende os en mail";
-            ViewBag.Message = "Hvis ikke du selv modtager en bekraeftelse, bedes du prove igen \n1-3 hverdages ventetid";
+            ViewBag.SuccessfullySent = "Tak! Du har nu prøvet at sende os en mail";
+            ViewBag.Message = "Hvis ikke du selv modtager en bekræftelse, bedes du prøve igen \n1-3 hverdages ventetid";
 
             return View();
         }
