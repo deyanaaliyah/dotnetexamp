@@ -27,19 +27,20 @@ namespace examProject21.Controllers
         {
             return View();
         }
-
+        //Error method
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        // navigates to ContactUs page
         [HttpGet]
         public IActionResult ContactUs()
         {
-
             return View();
         }
-
+        // takes input from contact formula and pass the object
         [HttpPost]
         public IActionResult ContactUs(SendMailDto sendMailDto)
         {
@@ -59,7 +60,8 @@ namespace examProject21.Controllers
             // Instantiate the subject - should be kept default to filter the mailbox nicely!
             message.Subject = "Ny booking fra websiden!";
 
-            // Inserting the body inside the mail using the TextPart class
+            // Inserting the body inside the mail using the TextPart class 
+            // TODO: HTMl/css to style the email 
             message.Body = new TextPart("plain")
             {
                 Text = "Navn: " + sendMailDto.Name +
@@ -69,6 +71,7 @@ namespace examProject21.Controllers
             };
 
             // Creating the mail server called client - very important to keep these private since it's very confidential
+            // TODO: move this section to appsettings.json
             using (var client = new SmtpClient())
             {
                 // Mail server fields. Port number, SSL, etc.

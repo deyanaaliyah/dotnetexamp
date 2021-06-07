@@ -22,7 +22,7 @@ namespace examProject21.Controllers
         {
             if(login.UserName == UserName && login.Password == Password)
             {
-                return View("Test",login);
+                return View(login);
             }
             else
             {

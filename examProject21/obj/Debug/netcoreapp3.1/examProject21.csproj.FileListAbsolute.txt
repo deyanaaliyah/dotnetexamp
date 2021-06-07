@@ -820,7 +820,6 @@ C:\Users\acer\Desktop\git clone again\dotnetexamp\examProject21\obj\Debug\netcor
 C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\examProject21.csprojAssemblyReference.cache
 C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Email\ContactUs.cshtml.g.cs
 C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Email\Iframe.cshtml.g.cs
-C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\obj\Debug\netcoreapp3.1\Razor\Views\Login\LoginForm.cshtml.g.cs
 C:\Users\Dejan\Source\Repos\dotnetexam\examProject21\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Dejan\Source\Repos\dotnetexam\examProject21\bin\Debug\netcoreapp3.1\appsettings.json
@@ -957,3 +956,6 @@ C:\Users\Dejan\Source\Repos\dotnetexam\examProject21\obj\Debug\netcoreapp3.1\exa
 C:\Users\Dejan\Source\Repos\dotnetexam\examProject21\obj\Debug\netcoreapp3.1\examProject21.dll
 C:\Users\Dejan\Source\Repos\dotnetexam\examProject21\obj\Debug\netcoreapp3.1\examProject21.pdb
 C:\Users\Dejan\Source\Repos\dotnetexam\examProject21\obj\Debug\netcoreapp3.1\examProject21.genruntimeconfig.cache
+C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Bruger\Documents\GitHub\dotnetexamp\examProject21\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll

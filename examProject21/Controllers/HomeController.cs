@@ -14,9 +14,8 @@ namespace examProject21.Controllers
         public HomeController(ConnectionStringClass cc)
         {
             _cc = cc;
-
         }
-       
+       // called during runtime
         public IActionResult Index()
         {
             var results = _cc.Sheet1.ToList();
@@ -35,13 +34,5 @@ namespace examProject21.Controllers
             }
             return View( await dataQuery.AsNoTracking().ToListAsync());
         }
-
-        //Returns a login form
-        [HttpGet]
-        public ActionResult LoginForm()
-        {
-            return View(); // By default, it returns a View with same name as action name
-        } 
-
     }
 }
