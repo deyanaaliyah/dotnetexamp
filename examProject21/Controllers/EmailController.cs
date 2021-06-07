@@ -51,7 +51,7 @@ namespace examProject21.Controllers
             message.From.Add(new MailboxAddress("Rådgivning", "noahfensterleigh@gmail.com"));
 
             // CC everyone in the group + the sender
-            message.To.Add(new MailboxAddress("sendMailDto.Name", sendMailDto.Email));
+            message.To.Add(new MailboxAddress(sendMailDto.Name, sendMailDto.Email));
             message.To.Add(new MailboxAddress("Dejan", "deja0191@stud.kea.dk"));
             message.To.Add(new MailboxAddress("Mohamad", "moha6248@stud.kea.dk"));
             message.To.Add(new MailboxAddress("Heritier", "heri0106@stud.kea.dk"));
